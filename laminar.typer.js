@@ -16,21 +16,26 @@ var Laminar = Laminar || {};
  */
 
 Laminar.Typer = (function() {
-  function Typer(domElementSelector,typedText,time,errorFreq) {
-    var element = document.querySelector(domElementSelector);
-    element.style.border = "1px solid red";
-    var text = typedText || "This is Laminar.Typer.";
-    var count = 0;
-    time = time || 200;
-
-    var timer = setInterval(function() {
-      var that = this;
-      if(count<text.length) {
-        element.insertAdjacentHTML('beforeend',text[count++]);
+  function Typer(domElementSelector,text,time,errorFreq) {
+    if(domElementSelector==undefined || domElementSelector==null || domElementSelector=="") return false;
+    this.element = document.querySelector(domElementSelector);
+    this.text = text || "This is Laminar.Typer!";
+    this.count = 0;
+    this.time = time || 200;
+  }
+  Typer.prototype.init = function() {
+    var that = this;
+    this.timer = setInterval(function() {
+      if(that.count<that.text.length) {
+        that.element.insertAdjacentHTML('beforeend',that.text[that.count++]);
       } else {
-        clearInterval(timer);
-      }
-    },time);
+        that.stop();
+      }      
+    },this.time);
+    return true;
+  }
+  Typer.prototype.stop = function() {
+    clearInterval(this.timer);
   }
   return Typer;
 })();
