@@ -23,7 +23,11 @@ Laminar.Typer = (function() {
     this.count = 0;
     this.time = time || 200;
   }
-  Typer.prototype.init = function() {
+  Typer.prototype.type = function(text) {
+    if(text!=undefined && text.length>0) {
+      this.text=text;
+      this.count=0;
+    }
     var that = this;
     this.timer = setInterval(function() {
       if(that.count<that.text.length) {
