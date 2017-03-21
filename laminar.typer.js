@@ -17,14 +17,14 @@ var Laminar = Laminar || {};
 
 Laminar.Typer = (function() {
   function Typer(domElementSelector,text,time,errorFreq) {
-    if(domElementSelector==undefined || domElementSelector==null || domElementSelector=="") return false;
+    if(domElementSelector===undefined || domElementSelector===null || domElementSelector==="") return false;
     this.element = document.querySelector(domElementSelector);
     this.text = text || "This is Laminar.Typer!";
     this.count = 0;
     this.time = time || 200;
   }
   Typer.prototype.type = function(text) {
-    if(text!=undefined && text.length>0) {
+    if(text!==undefined && text.length>0) {
       this.text=text;
       this.count=0;
     }
@@ -34,7 +34,7 @@ Laminar.Typer = (function() {
         that.element.insertAdjacentHTML('beforeend',that.text[that.count++]);
       } else {
         that.stop();
-      }      
+      }
     },this.time);
     return true;
   }
