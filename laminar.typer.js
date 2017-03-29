@@ -29,13 +29,15 @@ var Laminar = Laminar || {};
 				60% {
 					opacity: 0;
 				}
-				80% {
+				85% {
 					opacity: 1;
 				}
 				100% {
 					opacity: .25;
 				}
 			}
+ * 
+ * Style to taste.
  */
 
 Laminar.Typer = (function() {
