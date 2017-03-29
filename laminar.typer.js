@@ -24,26 +24,6 @@ Laminar.Typer = (function() {
     this.element = this.setTextField(document.querySelector(domElementSelector));
     this.setText(text);
   }
-  Typer.prototype.setCssStyle = function(rule) {
-    for(var c=0;c<document.styleSheets.length;c++) {
-      for(var rc=0;rc<document.styleSheets[c].rules.length;rc++) {
-        console.log(document.styleSheets[c].rules[rc]);
-      }
-      document.styleSheets[c].insertRule(".laminarCursor {color: red}",0);
-      // console.log(c + ": " + JSON.stringify(document.styleSheets[c]));
-    }
-
-    /*
-    var s = document.createElement('style');
-    s.setAttribute('type','text/css');
-    if(s.styleSheet) {
-      s.styleSheet.cssText = "color:red";
-    } else {
-      s.appendChild(document.createTextNode("color:red"));
-    }
-    */
-    console.log("Ran");
-  }
   Typer.prototype.setText = function(text) {
     this.text = text || "This is Laminar.Typer!";
     this.count=0;
