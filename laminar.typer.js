@@ -6,7 +6,6 @@
 
 var Laminar = Laminar || {};
 
-
 /* General Idea: An object that simulates a typing effect.
  * In the constructor give:
  * - the element that will contain the typed text
