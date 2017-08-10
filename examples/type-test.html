@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<style>
+			.laminarCursor {
+				animation-name: blink;
+				animation-duration: 0.5s;
+				animation-iteration-count: infinite;
+			}
+			@keyframes blink {
+				0% {
+					opacity: 0
+				}
+				60% {
+					opacity: 0;
+				}
+				85% {
+					opacity: 1;
+				}
+				100% {
+					opacity: .25;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>Hi. Welcome to Typer.</div>
+		<div id="type"></div>
+		<div>Typing is easy. Just do: typer.type("type something");</div>
+	<script src="../laminar.typer.js"></script>
+	<script>
+		var typer = new Laminar.Typer("#type",null,null,"_");
+		// typer.type("This will be typed");
+	</script>
+	</body>
+</html>
